@@ -1,0 +1,189 @@
+/*
+    Document   : home
+    Created on : 24 oct. 2009, 19:04:27
+    Author     : Root
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root {
+    display: block;
+}
+body{
+    background: url(./images/background.png) repeat;
+    font: 13px Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #003871;
+}
+
+#global{
+    width: 940px;
+    height: 840px;
+    margin: auto;
+}
+
+#header{
+    width: 940px;
+    height: 100px;
+    background: url(./images/header2.png);
+    float: left;
+    color: #FFFFFF;
+}
+
+#menu{
+    width: 240px;
+    height: 400px;
+    float: left;
+    background: url(./images/menu.png);
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+table{
+    width: 100%;
+}
+
+#menu #option ul{
+    list-style: none;
+    padding: 0px;
+/*    font: 15px;*/
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#menu #option ul li{
+    height: 35px;
+    width: 220px;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 35px;
+    background: url(./images/menuButton.png) repeat-x;
+
+}
+
+#menu #option ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#center{
+    width: 700px;
+    height: 700px;
+    float: left;
+    margin-top: 5px;
+    background: url(./images/center.png) repeat;
+}
+
+#center div.productList{
+    padding-left: 20px;
+}
+
+#center span.available{
+    color: green;
+}
+
+#center span.notAvailable{
+    color: red;
+}
+
+#center div.product{
+    float: left;
+    margin-right: 30px;
+}
+
+#center div.product a{
+    text-decoration: none;
+    color: #003871;
+    font-weight: bold;
+}
+
+#center img{
+    height: 140px;
+    width: 120px;
+    height: 100px;
+    width: 100px;
+    color: #FFFFFF;
+}
+#center div.add{
+    margin-left: 40px;
+}
+
+#center div.add h2{
+    text-align: left;
+}
+
+#center div.cart{
+    text-align: right;
+}
+#order, #update, #returnToHome, #loginB, #createCustomerB, #confirmB, #submit{
+    color: #FFFFFF;
+    font-weight : bold;
+    background: #003871;
+    background: #47547d;
+}
+
+#center div.cart img{
+    width: 40px;
+    height: 40px;
+}
+
+#center div.error{
+    text-align: left;
+    color: red;
+}
+
+#center div.cartDiv{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+#center div.cartDiv h2{
+    text-align: left;
+}
+
+#center div.login{
+    text-align: left;
+    margin-left: 40px;
+}
+#center div.login div.createButton{
+    margin-left: 220px;
+    width: 250px;
+}
+
+#center div.login div input{
+    margin-top: 0px;
+}
+
+#center div.CreateCustomer{
+    margin-left: 40px;
+    text-align: left;
+}
+
+#center div.order{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#center div.update{
+    float: right;
+    background: #e1e0f4;
+    background: url(./images/backCustomer.png) repeat;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#center div.confirm{
+    float: left;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#header div.header{
+    margin-top: 45px;
+}
+

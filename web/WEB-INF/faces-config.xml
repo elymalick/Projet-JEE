@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+     <navigation-case>
+      <from-action>#{customerMBean.log()}</from-action>
+      <from-outcome>compte</from-outcome>
+      <to-view-id>publicLogin.xhtml</to-view-id>
+   </navigation-case>
+    <navigation-case>
+      <from-action>#{currentUserMBean.login()}</from-action>
+      <from-outcome>admin</from-outcome>
+      <to-view-id>pageadmin.xhtml</to-view-id>
+   </navigation-case>
+ 
+   <navigation-case>   
+        <from-action>#{customerMBean.logsucces()}</from-action>
+      <from-outcome>se_login</from-outcome>
+      <to-view-id>menu.xhtml</to-view-id>
+   </navigation-case>
+    <navigation-case>   
+        <from-action>#{currentUserMBean.login()}</from-action>
+      <from-outcome>bienvenue</from-outcome>
+      <to-view-id>ProduitList.xhtml</to-view-id>
+   </navigation-case>
+
+    <navigation-case>
+         <from-action>#{currentUserMBean.add()}</from-action>
+      <from-outcome>page_produit</from-outcome>
+      <to-view-id>ProduitList.xhtml</to-view-id>    
+   </navigation-case>
+        
+      <navigation-case>  
+      <from-action>#{customerMBean.retour()}</from-action>
+      <from-outcome>page_produit</from-outcome>
+      <to-view-id>ProduitList.xhtml</to-view-id>    
+   </navigation-case>
+    <navigation-case>
+         <from-action>#{currentUserMBean.getListCart()}</from-action>
+      <from-outcome>public_cart</from-outcome>
+      <to-view-id>public_cart.xhtml</to-view-id>
+   </navigation-case>
+   
+   
+    <navigation-case>
+         <from-action>#{currentUserMBean.removeFromPanier()}</from-action>
+      <from-outcome>cart</from-outcome>
+      <to-view-id>public_cart.xhtml</to-view-id>
+   </navigation-case>
+   
+    </navigation-rule>
+
+    <navigation-rule>      
+    <navigation-case>  
+      <from-outcome>inscription_succes</from-outcome>
+      <to-view-id>public_login_succes.xhtml</to-view-id>
+   </navigation-case>
+  
+     <navigation-case>
+    
+      <from-outcome>error</from-outcome>
+      <to-view-id>error.xhtml</to-view-id>
+   </navigation-case>
+   
+     <navigation-case>  
+      <from-outcome>mon_panier</from-outcome>
+      <to-view-id>public_cart.xhtml</to-view-id>
+   </navigation-case>
+      
+     <navigation-case>   
+      <from-outcome>public_cart_validated</from-outcome>
+      <to-view-id>public_cart_validated.xhtml</to-view-id>
+   </navigation-case>
+   
+    </navigation-rule>
+          
+</faces-config>
+
+
+

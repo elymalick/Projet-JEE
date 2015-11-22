@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+     <title>Ajout de categorie</title>
+        <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <h:link class="css/home.css" rel="stylesheet" type="text/css" ></h:link>
+    
+    </h:head>
+    <h:body>
+   <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+        <f:view>
+           
+            <h:form>
+                
+                
+                <h1>Page D'ajout de categories</h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Nomcategorie:" for="nomcategorie" />
+                    <h:inputText id="nomcategorie" value="#{categorieADDBean.categorie.nomcategorie}" title="Nomcategorie" required="true" requiredMessage="The Nomcategorie field is required."/>
+                    <h:outputLabel value="Description:" for="description" />
+                    <h:inputText id="description" value="#{categorieADDBean.categorie.description}" title="Description" required="true" requiredMessage="The Description field is required."/>
+                </h:panelGrid>
+                
+                
+                
+                <h:commandButton id="Validation_Ajout_Categorie" value="Validez votre Ajout" action="#{categorieADDBean.add()}"/>
+
+            </h:form>
+        </f:view>
+
+    </div>
+    </h:body>
+</html>
+

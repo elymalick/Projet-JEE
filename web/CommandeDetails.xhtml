@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+      <f:metadata>  
+          <f:viewParam name="idCommande" value="#{commandeDetailsMBean.idCommande}"
+                   required="true"/>
+          <f:viewAction action="#{commandeDetailsMBean.loadCommande}"/>  
+      </f:metadata>
+    <h:head>
+        <title>Liste Commandes</title>
+          <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <h:link class="css/home.css" rel="stylesheet" type="text/css" ></h:link>
+    </h:head>
+    <h:body>
+ <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+        <div id="center" >
+        <f:view>
+            <h:form>
+                <h1>Modification / Suppression de commande</h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Commandeid:" for="commandeid" />
+                    <h:inputText id="commandeid" value="#{commandeDetailsMBean.details.commandeid}" title="Commandeid" required="true" requiredMessage="The Commandeid field is required."/>
+                  
+                   
+                    <h:outputLabel value="Statut:" for="statut" />
+                    <h:inputText id="statut" value="#{commandeDetailsMBean.details.statut}" title="Statut" required="true" requiredMessage="The Statut field is required."/>
+                    <h:outputLabel value="Datecommande:" for="datecommande" />
+                    
+                    
+                    
+                    <h:inputText id="datecommande" value="#{commandeDetailsMBean.details.datecommande}" title="Datecommande" required="true" requiredMessage="The Datecommande field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                 
+                    <br/>
+                         <br/>
+                        <br/>
+                 
+                        <p> 
+                        
+                    <h:commandButton  value="Mise en jour" action="#{commandeDetailsMBean.update(commandeDetailsMBean.details.commandeid,commandeDetailsMBean.details.statut)}"/><br/>
+                    <h:commandButton  value="Supprimer" action="#{commandeDetailsMBean.update(commandeDetailsMBean.details.commandeid,commandeDetailsMBean.details.statut)}"/>
+                        </p>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+            </div>
+ </div>
+    </h:body>
+</html>

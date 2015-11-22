@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+        <f:metadata>  
+      <f:viewParam name="idCustomer" value="#{customerDetailsMBeanbb.idCustomer}"  
+                   required="true"/>  
+      <f:viewAction action="#{customerDetailsMBeanbb.loadCustomer}"/>  
+    </f:metadata>  
+    
+    
+        <h:head>
+        <title>liste des produits</title>
+        <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <!--<h:link class="css/home.css" rel="stylesheet" type="text/css" ></h:link>-->
+    
+    </h:head>
+    <h:body>
+ 
+                
+      <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+    
+     <div id="center" >
+         
+         <div class="productList">
+             
+         
+    
+    
+      <f:view>
+            <h:form>
+                <h1>Details du client <font color="green">#{customerDetailsMBeanbb.details.nom}</font> </h1>
+                <h:panelGrid columns="2">
+                
+                     <h:outputLabel value="Identifiant" for="clientid" />
+                     <h:inputText id="clientid" value="#{customerDetailsMBeanbb.details.clientid}" title="Identifiant" required="true" requiredMessage="The Nom field is required."/>
+                    <h:outputLabel value="Nom:" for="nom" />
+                    <h:inputText id="nom" value="#{customerDetailsMBeanbb.details.nom}" title="Nom" required="true" requiredMessage="The Nom field is required."/>
+                    <h:outputLabel value="Adresse:" for="adresse" />
+                    <h:inputText id="adresse" value="#{customerDetailsMBeanbb.details.adresse}" title="Adresse" required="true" requiredMessage="The Adresse field is required."/>
+                    <h:outputLabel value="Ville:" for="ville" />
+                    <h:inputText id="ville" value="#{customerDetailsMBeanbb.details.ville}" title="Ville" required="true" requiredMessage="The Ville field is required."/>
+                    <h:outputLabel value="Region:" for="region" />
+                    <h:inputText id="region" value="#{customerDetailsMBeanbb.details.region}" title="Region" required="true" requiredMessage="The Region field is required."/>
+                    <h:outputLabel value="Codepostal:" for="codepostal" />
+                    <h:inputText id="codepostal" value="#{customerDetailsMBeanbb.details.codepostal}" title="Codepostal" required="true" requiredMessage="The Codepostal field is required."/>
+                    <h:outputLabel value="Pays:" for="pays" />
+                    <h:inputText id="pays" value="#{customerDetailsMBeanbb.details.pays}" title="Pays" required="true" requiredMessage="The Pays field is required."/>
+                    <h:outputLabel value="Telephone:" for="telephone" />
+                    <h:inputText id="telephone" value="#{customerDetailsMBeanbb.details.telephone}" title="Telephone" required="true" requiredMessage="The Telephone field is required."/>
+                    <h:outputLabel value="Email:" for="email" />
+                    <h:inputText id="email" value="#{customerDetailsMBeanbb.details.email}" title="Email" required="true" requiredMessage="The Email field is required."/>
+                
+                   
+                    <h:commandButton id="delete" value="delete" action="#{customerDetailsMBeanbb.remove()}"/> 
+                    <h:commandButton id="back" value="retour" action="#{customerDetailsMBeanbb.list()}"/>
+                 
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+        </div>
+     </div>
+      </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:c="http://java.sun.com/jsp/jstl/core"
+       >
+    <h:head>
+        <title>liste des produits</title>
+        <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <h:link class="css/home.css" rel="stylesheet" type="text/css" ></h:link>
+    
+    </h:head>
+   <h:body>
+       
+       
+                     
+      <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+          
+          <div id="menu">
+        <div id="option">
+            <ul>
+                <li><a href="ProductListServlet?categoryId=-1">Tous les categories</a></li>
+              <c:forEach var="category" items="#{categorieMBean.categories}">
+                    <!--<li><a href="ProductListServlet?categoryId=${category.categorieid}">${category.nomcategorie}</a></li>-->
+                    
+                  <li>  <h:link outcome="#{productListByCategorie.showListProdutByCat(category.categorieid)}" value="#{category.nomcategorie}"/> </li>
+                </c:forEach>
+                     <h:form> 
+                    <li> <h:commandButton value="Creer un compte" action="#{customerMBean.log()}" styleClass="sansLabel" /></li> 
+                    <li> <h:commandButton value="se Loger" action="#{customerMBean.logsucces()}" styleClass="sansLabel" /></li> 
+                    <li> <h:commandButton value="Voir votre panier" action="#{currentUserMBean.getListCart()}" styleClass="sansLabel" /></li> 
+              
+               </h:form>
+                <!--<li> <a href="publicLogin.xhtml" >Creer un compte</a> </li>-->
+            </ul>
+        </div>
+              
+              
+              
+          </div>
+       
+       
+       
+       
+       
+       <div id="center" >
+            <div class="cart"> <a href="CartServlet"><img src="images/Shopping_Cart.png" alt="" title="Panier" /></a></div>
+                <div class="productList">
+                     <c:choose>
+                    <c:when test="#{currentUserMBean.logged==false}">
+                        
+                        <div class="box">
+                    <h:form id="loginForm">
+                        <dl>
+                            <h1>   <dt class="boxHeader">Page de connexion</dt></h1>
+                            <dd class="boxContent">
+                                <h:message for="loginForm" />
+                                <dl>
+                                    <br/>
+                                    <dt> Login : </dt>
+                                    <dd>
+                                        <h:inputText id="nom" value="#{currentUserMBean.client.nom}" size="20" />       
+                                    </dd>
+                                    <dt>Nom </dt>
+                                    <dd>
+                                        <h:inputText id="email" value="#{currentUserMBean.client.email}" required="true" size="20" maxlength="60" />  
+                                    </dd>
+                                    <dd>
+                                         <br/>
+                            <br/>
+                                        <h:commandButton value="Connexion" action="#{currentUserMBean.login()}" class="formButton" style="width: 166px;" />
+                                        
+                                    </dd>
+                                </dl>
+                            </dd>
+                            
+                        </dl>
+                        <dt class="boxFooter">
+                            <br/>
+                            <br/>
+                            <h:commandLink action="#{clientJointBean.join()}" >
+                                <h:outputText value="Creer un compte" />
+                            
+                            </h:commandLink>
+                            
+                        </dt>
+                    
+                        
+        
+        </h:form>  
+            </div>
+                       
+                    </c:when>
+                    
+                    <c:otherwise>
+                        <div class="boxHeader">
+                            <dl>
+                        <dt class="boxHeader">
+                            <h1>      Bienvenue, <font color="green"> #{currentUserMBean.client.nom} </font> </h1></dt>
+                        <dd class="boxContent">
+                            <h:form>
+                                <dl>
+                                    <dd>Vous etes maintenant connecté </dd> 
+                        <dd>
+                            
+                            <br/>
+                             <br/>
+                              <br/>
+                            <h:commandButton action="#{currentUserMBean.deconnection()}" value="Deconnexion"
+                                             class="formButton" style="width: 166px;" />
+                        </dd> 
+                                </dl>
+                            </h:form>  
+                        </dd>
+                            </dl>
+                        </div>
+                    </c:otherwise>
+                    </c:choose>
+            </div>
+      </div>  
+      </div>
+   </h:body>
+</html>

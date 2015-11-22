@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    
+    
+    
+    
+    
+        <f:metadata>  
+            <f:viewParam name="idProduct" value="#{productDetailMBeanbb.idProduct}"  
+                   required="true"/>  
+            <f:viewAction action="#{productDetailMBeanbb.loadProduct()}"/>  
+    </f:metadata>  
+    
+    
+        <h:head>
+         <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+            <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+    
+            <f:view>
+
+    
+            <div align="center">
+               
+            <h:form>
+                <h1>les details du produit numero <font color="green">#{productDetailMBeanbb.details.produitid}</font></h1>
+                
+           
+               
+                    <h:panelGrid columns="2">
+                        
+                        <h:outputLabel value="Numero  produit" for="idproduit" />
+                        <h:inputText id="idproduit" value="#{productDetailMBeanbb.details.produitid}" title="Nomproduit" required="true" requiredMessage="The Nomproduit field is required."/>
+                        
+                        <h:outputLabel value="Nomproduit:" for="nomproduit" />
+                        <h:inputText id="nomproduit" value="#{productDetailMBeanbb.details.nomproduit}" title="Nomproduit" required="true" requiredMessage="The Nomproduit field is required."/>
+                        <h:outputLabel value="Prixunitaire:" for="prixunitaire" />
+                        <h:inputText id="prixunitaire" value="#{productDetailMBeanbb.details.prixunitaire}" title="Prixunitaire" required="true" requiredMessage="The Prixunitaire field is required."/>
+                        <h:outputLabel value="Quantiteenstock:" for="quantiteenstock" />
+                        <h:inputText id="quantiteenstock" value="#{productDetailMBeanbb.details.quantiteenstock}" title="Quantiteenstock" required="true" requiredMessage="The Quantiteenstock field is required."/>
+                            
+
+                        </h:panelGrid>
+                 
+                
+                 <h:commandButton id="delete" value="delete" action="#{productDetailMBeanbb.remove()}"/> 
+                 <h:commandButton id="update" value="update" action="#{productDetailMBeanbb.update(productDetailMBeanbb.details.produitid,productDetailMBeanbb.details.nomproduit,productDetailMBeanbb.details.quantiteenstock,productDetailMBeanbb.details.prixunitaire)}"/> 
+                
+                
+                </h:form>
+
+                    
+                   
+                    
+                
+                
+           </div>
+        </f:view>
+            </div>
+    </h:body>
+</html>
+

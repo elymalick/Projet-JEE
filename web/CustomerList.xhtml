@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Administration</title>
+    </h:head>
+
+    <h:body>
+    
+
+        <f:view>
+            <h:form>
+                <h1><h:outputText value=""/>liste des clients</h1>
+                <p:dataTable value="#{customerMBeanbb.customers}" var="item"
+                emptyMessage="No customer found with given criteria"   
+                  widgetVar="customerTable"  
+                  paginator="true"  
+                   rows="10">
+                    
+                      <p:column headerText="Identifiant"  
+                                sortBy="#{item.clientid}"  
+                                filterBy="#{item.clientid}"  
+                           filterMatchMode="contains">
+                        
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.clientid}"/>
+                    </p:column>
+
+                    <p:column headerText="Nom"  
+                              sortBy="#{item.nom}"  
+                              filterBy="#{item.nom}"  
+                           filterMatchMode="contains">
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.nom}"/>
+                     
+                    </p:column>
+                    
+                    <p:column headerText="Adresse"  
+                              sortBy="#{item.adresse}"  
+                              filterBy="#{item.adresse}"  
+                           filterMatchMode="contains">
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.adresse}"/>
+                        
+                    </p:column>
+                    
+                    
+                    <p:column headerText="Ville"  
+                              sortBy="#{item.ville}"  
+                              filterBy="#{item.ville}"  
+                           filterMatchMode="contains">
+                        
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.ville}"/>
+                    </p:column>
+                    
+                    
+                    <p:column headerText="Region"  
+                              sortBy="#{item.region}"  
+                              filterBy="#{item.region}"  
+                           filterMatchMode="contains">
+                    
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.region}"/>
+                    </p:column>
+                    
+                    
+                    <p:column  headerText="CodePostal"  
+                               sortBy="#{item.codepostal}"  
+                               filterBy="#{item.codepostal}"  
+                           filterMatchMode="contains">
+                        
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.codepostal}"/>
+                    
+                    </p:column> 
+                    
+                    <p:column headerText="Pays"  
+                              sortBy="#{item.pays}"  
+                              filterBy="#{item.pays}"  
+                           filterMatchMode="contains">
+                      
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.pays}"/>
+                    
+                    </p:column>
+                    
+                    <p:column headerText="Telephone"  
+                              sortBy="#{item.telephone}"  
+                              filterBy="#{item.telephone}"  
+                           filterMatchMode="contains">
+                       
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.telephone}"/>
+                    </p:column>
+                    <p:column headerText="Email"  
+                              sortBy="#{item.email}"  
+                              filterBy="#{item.email}"  
+                           filterMatchMode="contains">
+                        
+                        <h:link outcome="#{customerMBeanbb.showDetails(item.clientid)}" value="#{item.email}"/>
+                    </p:column>
+                    
+  
+                    
+                </p:dataTable>
+                <br/>
+                <br/>
+                <br/>
+                <h:commandButton id="ACEUI" value="Acceuil " action="pageadmin.xhtml"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

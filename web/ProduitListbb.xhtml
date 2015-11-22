@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    
+    
+      <f:metadata>  
+          <f:viewParam name="categorieid" value="#{categorieMBeanbb.idcategorie}"
+                   required="true"/>
+          <f:viewAction action="#{categorieMBeanbb.loadCategorie()}"/>  
+      </f:metadata>
+    
+    
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+              <div id="conteneur">
+<!--<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> -->
+        <f:view>
+            <h:form>
+                <h1 align="center"><h:outputText value="Liste des produits / categorie :"/></h1>
+                <p:dataTable value="#{categorieMBeanbb.macollection}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Produitid"/>
+                        </f:facet>
+                        <h:link outcome="#{productMBean.showDetails(item.produitid)}" value="#{item.produitid}"/>                     
+                        
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nomproduit"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nomproduit}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Prixunitaire"/>
+                        </f:facet>
+                        <h:outputText value="#{item.prixunitaire}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Quantiteenstock"/>
+                        </f:facet>
+                        <h:outputText value="#{item.quantiteenstock}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Photo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.photo}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Categorieid"/>
+                        </f:facet>
+                        <h:outputText value="#{item.categorieid.categorieid}"/>
+                    </p:column>
+                </p:dataTable>
+                <br/>
+                <br/>
+                <h:commandButton id="Back1" value="Revenir a la liste de categories" action="#{categorieMBeanbb.RetourCategorie()}"/>
+            
+            </h:form>
+        </f:view>
+
+              </div>
+    </h:body>
+</html>
+

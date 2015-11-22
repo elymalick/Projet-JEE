@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Administration</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Liste des categories "/></h1>
+                <p:dataTable value="#{categorieMBeanbb.allCategories}" var="item">
+                    <p:column headerText="Numero categorie"  
+                                sortBy="#{item.categorieid}"  
+                                filterBy="#{item.categorieid}"  
+                           filterMatchMode="contains">
+                    
+                        <h:link outcome="#{categorieMBeanbb.showListProduct(item.categorieid)}" value="#{item.categorieid}"/>
+                    </p:column>
+                    <p:column  headerText="Nom categorie"  
+                               sortBy="#{item.nomcategorie}"  
+                               filterBy="#{item.nomcategorie}"  
+                           filterMatchMode="contains">
+                     
+                        <h:outputText value="#{item.nomcategorie}"/>
+                                           </p:column>
+                    <p:column headerText="Numero categorie"  
+                              sortBy="#{item.description}"  
+                              filterBy="#{item.description}"  
+                           filterMatchMode="contains">
+                    
+                        <h:outputText value="#{item.description}"/>
+                          </p:column>
+                                            <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Gerer vos Categorie"/>
+                        </f:facet>
+                        <h:link outcome="#{categorieMBeanbb.GestionCat(item.categorieid)}" value="Click Here"/>
+                    </p:column>
+                  
+                </p:dataTable>
+                <br/>
+                <br/>
+               <h:commandButton id="Ajout_Categorie" value="Ajoutez une categorie " action="#{categorieMBeanbb.AjoutCat}"/>
+  <h:commandButton id="ACEUI" value="Acceuil " action="pageadmin.xhtml"/>
+            </h:form>
+        </f:view>
+        
+      
+
+    </h:body>
+</html>
+

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+      <f:metadata>  
+          <f:viewParam name="idCommande" value="#{commandeDetailsMBean.idCommande}"  
+                   required="true"/>
+          <f:viewAction action="#{commandeDetailsMBean.loadCommande}"/>  
+      </f:metadata>
+    
+    <h:head>
+        <title> Administration</title>
+          <link type="text/css" rel="stylesheet" href="/css/home.css" />
+       <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+         <div id="conteneur">
+<div id="noir">
+    
+<header>
+<div id="entete">
+   
+<div id="nom"><h1>APPLICATION J2EE TER 2014</h1></div>
+</div>
+
+</header>
+</div> 
+             
+             <div id="center" >
+        <f:view>
+              <div class="productList">
+                  <div align="center">
+            <h:form>
+                <h1><h:outputText value="les details de la commande du client "/><font color="green">#{commandeDetailsMBean.details.clientid.nom}</font></h1>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Numero de la commande:    "/>
+                    <h:outputText value="#{commandeDetailsMBean.details.commandeid}" title="Commandeid"/>
+                    
+                         <h:outputText value=" client id "/>
+                         <h:outputText value="#{commandeDetailsMBean.details.clientid.clientid}" title=" client id "/>
+                    <h:outputText value="Nom client"/>
+                    <h:outputText value="#{commandeDetailsMBean.details.clientid.nom}" title="Nom client"/>
+                 
+                    <h:outputText value="Adresse client: "/>
+                    <h:outputText value="#{commandeDetailsMBean.details.clientid.adresse}" title="Adresse client"/>
+                 
+         
+              <br/>
+              <br/>
+                    <div>   <h:commandButton id="back" value="Retour" action="#{commandeDetailsMBean.list()}"/></div>
+                </h:panelGrid>
+            </h:form>
+                  </div>
+              </div>
+        </f:view>
+             </div>
+         </div>
+    </h:body>
+</html>
+

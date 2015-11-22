@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+   
+    
+    
+    
+    <head>
+		
+		
+		<title>Adiministrateur</title>
+		  <link type="text/css" rel="stylesheet" href="/css/styles.css" />
+       <link type="text/css" rel="stylesheet" href="css/styles.css" />
+        <h:link class="css/styles.css" rel="stylesheet" type="text/css" ></h:link>
+		<link rel="stylesheet" href="css/styles.css"/>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		
+	</head>
+<body>
+
+<div id="content">
+
+	<ul class="menu">
+            <li class="item1"><a href="CustomerList.xhtml"><h2>Gestion des clients </h2>	</a>		
+		</li>
+            <li class="item2"><a href="CategorieList.xhtml"><h2>Gestion des produits </h2> </a>
+		
+		</li>
+		<li class="item3"><a href="CommandeList.xhtml"><h2>Gestion des commandes </h2> </a>
+		
+		</li>
+            
+            <li class="item3"><a href="ProduitList.xhtml"><h2>Deconnexion </h2> </a>
+		
+		</li>
+		
+            
+            <li class="item3"><a href="ProduitList.xhtml"><h2>Deconnexion </h2> </a>
+		
+		</li>
+	</ul>
+
+</div>
+
+<!--initiate accordion-->
+<script type="text/javascript">
+	$(function() {
+	
+	    var menu_ul = $('.menu > li > ul'),
+	           menu_a  = $('.menu > li > a');
+	    
+	    menu_ul.hide();
+	
+	    menu_a.click(function(e) {
+	        e.preventDefault();
+	        if(!$(this).hasClass('active')) {
+	            menu_a.removeClass('active');
+	            menu_ul.filter(':visible').slideUp('normal');
+	            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+	        } else {
+	            $(this).removeClass('active');
+	            $(this).next().stop(true,true).slideUp('normal');
+	        }
+	    });
+	
+	});
+</script>
+
+</body>
+    
+    
+    
+</html>
+
