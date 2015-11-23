@@ -16,7 +16,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author ibrra
+ * @author ely
  */
 @Stateless
 @LocalBean
