@@ -19,7 +19,6 @@ import session.CategorieManagerbb;
 import session.ProductManagerbb;
 
 /**
- *
  * @author ely
  */
 @Named(value = "categorieMBeanbb")
@@ -31,9 +30,6 @@ public class CategorieMBeanbb implements Serializable{
     
         @EJB
     private CategorieManagerbb categoriemanager;
-        
-        
-        
         private int idproduit;
         private Produit produit =new Produit();
         private Categorie categorie= new Categorie();
